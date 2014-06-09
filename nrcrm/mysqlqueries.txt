@@ -1,0 +1,13 @@
+1) Query string to get values from two tables with one clientID
+select tblclientdetails.clientID, tblclientdetails.fname, tblclientdetails.lname, tblclientdetails.company,
+tblclientvisit.date, tblclientvisit.location, tblclientvisit.notes, tblclientvisit.interactionby FROM
+tblclientdetails, tblclientvisit WHERE
+tblclientdetails.clientID = 21 AND
+tblclientdetails.clientID = tblclientvisit.clientID;
+
+
+select tblclientdetails.clientID AS nrid, tblclientdetails.fname, tblclientdetails.lname, tblclientdetails.company,
+tblclientvisit.date, tblclientvisit.location, tblclientvisit.notes, tblclientvisit.interactionby FROM
+tblclientdetails, tblclientvisit WHERE
+tblclientdetails.clientID = 21 AND
+nrid = tblclientvisit.clientID;
