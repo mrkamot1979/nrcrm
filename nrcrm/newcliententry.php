@@ -1,28 +1,7 @@
+<?php $pagetitle = "New Client Entry"; ?>
 <html>
-<head>
-<meta charset="utf-8">
-<link rel="stylesheet" href="css/normalize.css">
-<link href='http://fonts.googleapis.com/css?family=Changa+One|Open+Sans:400italic,700italic,400,700,800' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="css/main.css" >
-<link rel="stylesheet" href="css/responsive.css" >
-<title>New Client Login</title>
-</head>
-
- <header>
-     <a href="login.php" id="logo">
-        <h1>Client Interaction Management</h1>  
-		<h2>NTMC Foundation</h2>
-     </a>
-	    <nav>
-        <ul>
-          <li><a href="newcliententry.php" class="selected">New Client</a></li>
-          <li><a href="about.html">New Interaction</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-</head>
-<?php
+<?php 
+include('inc/header.php');
 session_start();
 //echo $_SESSION['name'];
 include('inc/sessionvalidation.php');
