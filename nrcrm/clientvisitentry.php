@@ -9,14 +9,14 @@
     <title>New Interaction</title>
 </head>
 <header>
-     <a href="login.php" id="logo">
+     <a href="landing.php" id="logo">
         <h1>Client Management System</h1>  
         <h2>NTMC Foundation</h2>
       </a>
       <nav>
         <ul>
           <li><a href="newcliententry.php">New Client</a></li>
-          <li><a href="clientvisitentry.php" class="selected">New Interaction</a></li>
+          <li><a href="newinteraction_search.php" class="selected">New Interaction</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
         
