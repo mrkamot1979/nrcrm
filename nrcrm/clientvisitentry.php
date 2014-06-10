@@ -1,13 +1,32 @@
 <html>
-<head meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title></title>
+<head 
+<meta charset="utf-8">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href='http://fonts.googleapis.com/css?family=Changa+One|Open+Sans:400italic,700italic,400,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/main.css" >
+    <link rel="stylesheet" href="css/responsive.css" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Interaction</title>
 </head>
+<header>
+     <a href="login.php" id="logo">
+        <h1>Client Management System</h1>  
+        <h2>NTMC Foundation</h2>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="newcliententry.php">New Client</a></li>
+          <li><a href="clientvisitentry.php" class="selected">New Interaction</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        
+      </nav>
+      
+    </header>
 <?php
 	session_start();
 	//echo $_SESSION['name'];
-		
 	include('inc/sessionvalidation.php');
-
 	//GET to get the ClientID
 	$clientID = $_GET['id'];
 ?>
