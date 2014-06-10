@@ -7,26 +7,27 @@
 <link rel="stylesheet" href="css/responsive.css" >
 <title>Login</title>
 </head>
-
+<body>
  <header>
      <a href="login.php" id="logo">
         <h1>Client Interaction Management</h1>  
 		<h2>NTMC Foundation</h2>
+		<nav>
+        <ul>
+          <li><a href="newcliententry.php">New Client</a></li>
+          <li><a href="#">New Interaction</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        
+      </nav>
      </a>
-      
-      
     </header>
-</head>
-
 <?php
 session_start();
 //echo $_SESSION['name'];
-	
 include('inc/sessionvalidation.php');
 //logout link
-
 ?>
-
-
+</body>
 
 </html>
