@@ -28,6 +28,9 @@
 11) Login page > page to show choices what to do next > etc..
 12) [DONE] Rename loginsession.php -> login.php
 13) [DONE] Implement CSS to enter new client > enter visit details workflow
+14) Create a Header in the includes section for ease of maintenance.
+	14.1) [DONE] landing.php
+	14.2) [DONE] newcliententry.php
 	
 
 
