@@ -4,7 +4,7 @@
 	session_start();
 
 	
-	//	Validation block
+	//	Validation block.  used the function "cleaninput()" found in inc/dbhelper.php
 	$username = cleaninput($_POST['username']);
 	$password = cleaninput($_POST['nrpassword']);
 		
