@@ -48,10 +48,11 @@
 14) Create a Header in the includes section for ease of maintenance.
 	14.1) [DONE] landing.php
 	14.2) [DONE] newcliententry.php
-	14.3) newcliententry_process.php
+	14.3) [DONE] newcliententry_process.php
 	14.4) [DONE] newinteraction_search.php
-	14.5) newinteraction_process.php
-	
+	14.5) [DONE] newinteraction_process.php
+    14.6) [DONE] clientvisitentryprocess.php
+15) "Back to previous page" protection mechanism - this is important to avoid double entry to the database (i.e. same data but different identifier)
 	
 
 
