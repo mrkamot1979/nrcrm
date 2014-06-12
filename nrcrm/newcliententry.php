@@ -1,8 +1,10 @@
-<?php $pagetitle = "New Client Entry"; ?>
+<?php 
+session_start();
+$pagetitle = "New Client Entry"; 
+?>
 <html>
 <?php 
 include('inc/header.php');
-session_start();
 //echo $_SESSION['name'];
 include('inc/sessionvalidation.php');
 //logout link
@@ -10,7 +12,6 @@ include('inc/sessionvalidation.php');
 
 <!-- form section starts here-->
 <body>
-<a href="nrlogout.php">Logout</a>
 <br>
 <center>
 
