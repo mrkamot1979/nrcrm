@@ -2,7 +2,7 @@
 select tblclientdetails.clientID, tblclientdetails.fname, tblclientdetails.lname, tblclientdetails.company,
 tblclientvisit.date, tblclientvisit.location, tblclientvisit.notes, tblclientvisit.interactionby FROM
 tblclientdetails, tblclientvisit WHERE
-tblclientdetails.clientID = 21 AND
+tblclientdetails.clientID = 14 AND
 tblclientdetails.clientID = tblclientvisit.clientID;
 
 
