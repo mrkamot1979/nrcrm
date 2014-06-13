@@ -1,4 +1,4 @@
-<?php 
+<?php
 	session_start();
 	$pagetitle = "New Interaction"; 
 ?>
@@ -10,7 +10,7 @@
 <div id="wrapper">
 <center>
 	<form action="newinteraction_process.php" id="searchform" method="POST">
-		<table border="5" padding="10">
+		<table>
 		<tr>
 			<th><label for="searchtype">Search Type</label></th>
 			<td>
@@ -34,6 +34,7 @@
 	</form>
 </center>
 </div>
+
 </body>
 
 </html>	
