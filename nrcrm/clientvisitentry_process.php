@@ -11,7 +11,7 @@
 
 <?php
 	//GET to set the ClientID
-	$clientID = addslashes(htmlspecialchars($_GET['id']));
+	$clientID = cleaninput($_GET['id']);
 
 	//prepare and clean variables via $_POST
 	$visitdate = cleaninput($_POST['visitdate']);
