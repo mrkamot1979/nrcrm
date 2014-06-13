@@ -1,9 +1,9 @@
-<?php 
+<?php
 session_start();
-$pagetitle = "New Client Entry"; 
+$pagetitle = "New Client Entry";
 ?>
 <html>
-<?php 
+<?php
 include('inc/header.php');
 //echo $_SESSION['name'];
 include('inc/sessionvalidation.php');
@@ -11,14 +11,14 @@ include('inc/sessionvalidation.php');
 ?>
 
 <!-- form section starts here-->
-<body>
+<div id="wrapper">
 <br>
 <center>
 
 <h1>Test Entry Form</h1>
 <form method="POST" action="newcliententry_process.php">					
 		
-		<table border="2">
+		<table border="2" id="wrapper">
 			<tr>
 			<th>
 			<label for="fname">First Name</label>
@@ -66,7 +66,7 @@ include('inc/sessionvalidation.php');
 			<input type="text" name="email" id="email" />
 			</td>
 			</tr>
-			
+
 			<tr>
 			<th>
 			<label for="compname">Company</label>
@@ -81,6 +81,6 @@ include('inc/sessionvalidation.php');
 			<input type="submit" value="Submit">				
 			</center>
 </form>
-
+</div>
 </body>
 </html>
