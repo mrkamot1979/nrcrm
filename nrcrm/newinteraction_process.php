@@ -1,8 +1,15 @@
 <?php
-	session_start();
-	include('inc/sessionvalidation.php');
-	include('inc/dbhelper.php');
+  session_start();
+  $pagetitle = "New Interaction";
+?>
+<html>
+<?php
+  include('inc/header.php');
+  include('inc/sessionvalidation.php');
+  include('inc/dbhelper.php');
+?>
 
+<?php
 	$searchtype = cleaninput($_POST['searchtype']);
 	$searchterm = cleaninput($_POST['searchterm']);
 
@@ -62,10 +69,8 @@
                echo htmlspecialchars($row['email']);
                echo "</tr>";
              }
-
              echo "</table></center>";
-
        }
-
-
 ?>
+
+</html>
