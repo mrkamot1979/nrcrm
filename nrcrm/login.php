@@ -1,4 +1,4 @@
-	
+
 
 <html>
 <head>
@@ -15,11 +15,12 @@
         <h1>Client Interaction Management</h1>  
 		<h2>NTMC Foundation</h2>
      </a>
-      
-      
+
+
     </header>
 
 <body>
+    <div id="wrapper">
     <?php
 	
 		/*validation script to find out if the user has logged in or not, before going to this page.
@@ -43,6 +44,7 @@
       
     </form>
     </center>
+    </div>
   </body>
 
 
