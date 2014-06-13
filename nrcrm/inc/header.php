@@ -9,7 +9,7 @@
 <body>
  <header>
      <a href="landing.php" id="logo">
-        <h1>Client Interaction Management</h1>  
+        <h1>Client Interaction Management</h1>
 		<h2>NTMC Foundation</h2>
 		<nav>
         <ul>
@@ -23,9 +23,11 @@
 		   echo "class=selected";
 		   }?>
 		   >New Interaction</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="exdaterange_entry.php" <?php if(isset($pagetitle) AND $pagetitle == "Extract by Date") {
+            echo "class=selected";
+            } ?>>Extract by Date Range</a></li>
         </ul>
-        
+
       </nav>
      </a>
     </header>
