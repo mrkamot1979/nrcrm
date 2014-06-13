@@ -11,3 +11,10 @@ tblclientvisit.date, tblclientvisit.location, tblclientvisit.notes, tblclientvis
 tblclientdetails, tblclientvisit WHERE
 tblclientdetails.clientID = 21 AND
 nrid = tblclientvisit.clientID;
+
+2) Query to get all of client visits with the fields ClientID, Visit ID, Date, Time, Location Notes and Interaction by and filtered by a date range
+SELECT tblclientdetails.clientID, tblclientvisit.visitid, tblclientdetails.fname, tblclientdetails.lname, tblclientdetails.company,
+tblclientvisit.date, tblclientvisit.location, tblclientvisit.notes, tblclientvisit.interactionby FROM
+tblclientdetails, tblclientvisit WHERE
+(tblclientvisit.date BETWEEN '2014/01/01' AND '2014/12/31') AND
+tblclientdetails.clientID = tblclientvisit.ClientID;
