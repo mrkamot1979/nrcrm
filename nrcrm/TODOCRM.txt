@@ -23,17 +23,18 @@
 	Time (japan format?)
 	Notes (long characters).
 	InteractionBy (will be filled up by the hidden input type "enteredby")
-3.1) [DONE] Create a php login to mysql function inside an include file.	
+3.1) [DONE] Create a php login to mysql function inside an include file.
 4) [DONE] Add another crdential in the tbluser table
 		5.1) username : thet password : miller13
 5) Workflows
 	5.1) [DONE] Create a script to handle frmclientvisitentry.php to pass ClientID and create incremental VisitID in tblclientvisit table
-	5.2) Create Search Client > Enter Visitation details workflow
+	5.2) [DONE] Create Search Client > Enter Visitation details workflow
 		5.2.1) [DONE] Search type and Search Term
 		5.2.3) [DONE] Create newinteraction_process.php
-	5.3) Create Extract Client Visits functionality based on 
-		5.3.1) client name and date
-		5.3.2) Interactionby/enteredby
+	5.3) Create Extract Client Visits functionality
+		5.3.1) Criteria based on date range.
+		5.3.2) Criteria based on clientID and date range.
+        5.3.4) Implement PEAR Excel Writer to make the searches exportable.
 6) [DONE] Confirm function of addslahes/htmlspecialchars/stripslashes - no need.
 7) Destroy session functionality.
 8) create javascript validations for 
@@ -53,7 +54,8 @@
 	14.5) [DONE] newinteraction_process.php
     14.6) [DONE] clientvisitentryprocess.php
 15) "Back to previous page" protection mechanism - this is important to avoid double entry to the database (i.e. same data but different identifier)
-	
+16) [DONE] Create Logout mechanism
+
 
 
 *aspirational* convert to PDO
