@@ -5,6 +5,7 @@
 session_start();
 include('inc/sessionvalidation.php');
 ?>
-</body>
 
+
+</body>
 </html>
