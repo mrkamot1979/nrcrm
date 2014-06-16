@@ -20,6 +20,9 @@
 	$visitnotes = cleaninput($_POST['visitnotes']);
 	$visitby = cleaninput($_POST['interactionby']);
 
+    //code block to prevent malicious code.
+    nrstripos($_POST);
+
 	//connect to database nrcrm and enter the data to tblclientvisits
 	connectToDbase('nrcrm');
 	//prepare insert statement the insert into database
