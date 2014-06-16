@@ -28,6 +28,18 @@
 		$data = htmlspecialchars($data);
 		return $data;
 	}
-	
+
+
+        //function using stripos to prevent malicious code
+    function nrstripos($postfrompage)  {
+                foreach ($postfrompage as $value) {
+            		if (stripos($value, 'Content-Type:') !== FALSE) {
+            			echo "<center><br>There was a problem with the information you entered.</center>";
+            			exit;
+            			}
+                      }
+                }
+
+
 
 ?>
