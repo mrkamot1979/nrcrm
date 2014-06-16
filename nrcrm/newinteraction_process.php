@@ -13,6 +13,10 @@
 	$searchtype = cleaninput($_POST['searchtype']);
 	$searchterm = cleaninput($_POST['searchterm']);
 
+    //code block to remove malicious content.
+    nrstripos($_POST);
+
+
     //connect to database
     connectToDbase('nrcrm');
     //create search string
