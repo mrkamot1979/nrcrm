@@ -36,7 +36,7 @@
 		5.3.2) Criteria based on clientID and date range.
         5.3.4) Implement PEAR Excel Writer to make the searches exportable.
 6) [DONE] Confirm function of addslahes/htmlspecialchars/stripslashes - no need.
-7) Destroy session functionality.
+7) [DONE] Destroy session functionality.
 8) create javascript validations for 
 	8.1) loginsession.php page
 	8.2) frmentryvisit.page
@@ -53,8 +53,10 @@
 	14.4) [DONE] newinteraction_search.php
 	14.5) [DONE] newinteraction_process.php
     14.6) [DONE] clientvisitentryprocess.php
+    14.7) clientvisitentry.php
 15) "Back to previous page" protection mechanism - this is important to avoid double entry to the database (i.e. same data but different identifier)
 16) [DONE] Create Logout mechanism
+17) [DONE] stripos() function to prevent malicious code
 
 
 
