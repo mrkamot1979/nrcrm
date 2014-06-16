@@ -21,6 +21,8 @@ include('inc/dbhelper.php');
 	$proccompname = cleaninput($_POST['compname']);
 	$procusername = cleaninput($_POST['enteredby']);
 
+    //this function is housed in the inc/dbhelper.php file.  this is used to prevent malicious code.
+    nrstripos($_POST);
 	//function to connect to database
 	connectToDbase('nrcrm');
 
@@ -32,10 +34,8 @@ include('inc/dbhelper.php');
 	if ($result)
 		{
 			echo mysql_affected_rows()." client names entered";
-			echo "<br>";
-			echo "Go <a href=\"welcome.php\">back</a>?";
-			echo "<br>";
-			$id = mysql_insert_id(); //ClientID
+		   	$id = mysql_insert_id(); //ClientID
+            echo = "<br>";
 			echo "Enter interaction <a href=\"clientvisitentry.php?id=$id\">details</a>";
 		} else {
 			echo "there was something wrong with the database entry process.";
