@@ -13,10 +13,15 @@
 	$searchtype = cleaninput($_POST['searchtype']);
 	$searchterm = cleaninput($_POST['searchterm']);
 
-    //code block to remove malicious content.
+	//validation block to make sure that the fields are not blank.
+	if ($searchtype == "" OR $searchterm == "") {
+		echo "<center><br>Search Type and Search Term are required inputs.</center>";
+		exit;
+	}
+
+	//code block to remove malicious content.
     nrstripos($_POST);
-
-
+ 
     //connect to database
     connectToDbase('nrcrm');
     //create search string
@@ -24,7 +29,7 @@
     "SELECT * from tblclientdetails
     WHERE ".$searchtype."
     LIKE '%".$searchterm."%'
-    ORDER BY lname";
+    ORDER BY clientID";
 
     /*
         code block below searches the database, checks if there are results to the search and
@@ -41,24 +46,24 @@
 
     {
       echo "<center><font size='20'><b>$num_result</b> record/s found.</font><br><br>";
-            echo "<table border='5'>";
-            echo "<tr bgcolor='yellow'>";
+            echo "<table border='5' style='table-layout: fixed; width: 80%'>";
+            echo "<tr bgcolor='3366CC'>";
             echo "<td align=\"center\">Client ID";
             echo "<td align=\"center\">Company";
             echo "<td align=\"center\">First Name";
             echo "<td align=\"center\">Last Name";
             echo "<td align=\"center\">Address";
             echo "<td align=\"center\">Gender";
-            echo "<td align=\"center\">Email";
+            echo "<td align=\"center\" style=\"word-wrap: break-word\">Email";
             echo "</tr>";
 
             for ($i=0; $i < $num_result; $i++)
              {
                $row=mysql_fetch_array($searchresult);
-               echo "<tr bgcolor=\"#FFFFFF\" onMouseOver=\"this.bgColor='#FFFF99'\" onMouseOut=\"this.bgColor='#FFFFFF'\"><td>";
+               echo "<tr bgcolor=\"#FFFFFF\" onMouseOver=\"this.bgColor='#B2CCFF'\" onMouseOut=\"this.bgColor='#FFFFFF'\"><td>";
                echo htmlspecialchars($row['ClientID']);
                $id=htmlspecialchars($row['ClientID']);
-               echo "&nbsp;&nbsp;&nbsp;<a href='http://localhost/nrcrm/clientvisitentry.php?id=$id'>Enter Query</a>";
+               echo "&nbsp;&nbsp;&nbsp;<a href='http://localhost/nrcrm/clientvisitentry.php?id=$id'>New Interaction</a>";
                echo "<td>";
                echo htmlspecialchars($row['company']);
                echo "<td>";
