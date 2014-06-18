@@ -46,7 +46,7 @@ if ($exnum_result == 0) {
 		echo "<br>There were no results found";
 		exit;
 	} else { //create the table
-			echo "<center><font size='20'><b>$num_result</b> record/s found.</font><br><br>";
+			echo "<center><font size='20'><b>$exnum_result</b> record/s found.</font><br><br>";
             echo "<table border='5'>";
             echo "<tr bgcolor='yellow'>";
             echo "<td align=\"center\">Client ID";
@@ -62,8 +62,8 @@ if ($exnum_result == 0) {
             for ($i=0; $i < $exnum_result; $i++)
              {
                $row=mysql_fetch_array($exdatesearchresult);
-               echo "<tr bgcolor=\"#FFFFFF\" onMouseOver=\"this.bgColor='#FFFF99'\" onMouseOut=\"this.bgColor='#FFFFFF'\"><td>";
-               echo htmlspecialchars($row['ClientID']);
+               echo "<tr><td >";
+               echo htmlspecialchars($row['clientID']);
                echo "<td>";
                echo htmlspecialchars($row['company']);
                echo "<td>";
@@ -71,10 +71,14 @@ if ($exnum_result == 0) {
                echo "<td>";
                echo htmlspecialchars($row['lname']);
                echo "<td>";
-               echo htmlspecialchars($row['location']);
+               echo htmlspecialchars($row['date']);
                echo "<td>";
-               echo htmlspecialchars($row['email']);
-               echo "</tr>";
+               echo htmlspecialchars($row['location']);
+			   echo "<td>";
+               echo htmlspecialchars($row['notes']);
+			   echo "<td>";
+               echo htmlspecialchars($row['interactionby']);
+			   echo "</tr>";
              }
              echo "</table></center>";
 		}
