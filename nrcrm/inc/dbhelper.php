@@ -2,6 +2,7 @@
 	// function to connect to database
 	function connectToDbase($dbname) {
 		//connect to the database
+		
 		$conn=mysql_pconnect('localhost','nroldan','thet');
 
     if (!$conn){
