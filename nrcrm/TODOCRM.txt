@@ -57,7 +57,10 @@
 15) "Back to previous page" protection mechanism - this is important to avoid double entry to the database (i.e. same data but different identifier)
 16) [DONE] Create Logout mechanism
 17) [DONE] stripos() function to prevent malicious code
-
+18) [DONE] Make <table> for search results into a fixed width table and make <td> to "justify" so it does not affect the table's overall width. 
+	18.1) If possible, enter the changes in the inc/main.css file as a class.
+19) [DONE] Change "Enter Query" to "New Interaction"
+20) [DONE] Enter validation to prevent blank entries in New Interaction search workflow.
 
 
 *aspirational* convert to PDO
