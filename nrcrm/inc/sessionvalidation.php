@@ -7,9 +7,9 @@ if (isset($_SESSION['name'])) {
     echo "<br>";
     echo "<a href=\"nrlogout.php\">Logout</a>";
     } else {
-	$returnurl = "Location:login.php?id=notLoggedIn";
-	header($returnurl);
-	exit;
+		$returnurl = "Location:login.php?id=notLoggedIn";
+		header($returnurl);
+		exit;
 }
 
 
