@@ -1,8 +1,8 @@
-1) Query string to get values from two tables with one clientID
+//Query string to get values from two tables with one clientID
 select tblclientdetails.clientID, tblclientdetails.fname, tblclientdetails.lname, tblclientdetails.company,
 tblclientvisit.date, tblclientvisit.location, tblclientvisit.notes, tblclientvisit.interactionby FROM
 tblclientdetails, tblclientvisit WHERE
-tblclientdetails.clientID = 14 AND
+tblclientdetails.clientID = 40 AND
 tblclientdetails.clientID = tblclientvisit.clientID;
 
 
@@ -18,3 +18,10 @@ tblclientvisit.date, tblclientvisit.location, tblclientvisit.notes, tblclientvis
 tblclientdetails, tblclientvisit WHERE
 (tblclientvisit.date BETWEEN '2014/01/01' AND '2014/12/31') AND
 tblclientdetails.clientID = tblclientvisit.ClientID;
+
+//query to get client visits for a certain date range
+select tblclientdetails.clientID, tblclientdetails.fname, tblclientdetails.lname, tblclientdetails.company,
+tblclientvisit.date, tblclientvisit.location, tblclientvisit.notes, tblclientvisit.interactionby FROM
+tblclientdetails, tblclientvisit WHERE
+tblclientvisit.date BETWEEN "2014-01-01" AND "2014-12-01" AND
+tblclientdetails.clientID = tblclientvisit.clientID;
