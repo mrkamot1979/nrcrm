@@ -33,7 +33,9 @@ tblclientdetails, tblclientvisit
 WHERE
 tblclientvisit.date BETWEEN '".$fromdate."' AND '".$todate."' 
 AND
-tblclientdetails.clientID = tblclientvisit.clientID";
+tblclientdetails.clientID = tblclientvisit.clientID
+ORDER BY tblclientdetails.clientID
+";
 
 
 //connect to database
@@ -47,22 +49,22 @@ if ($exnum_result == 0) {
 		exit;
 	} else { //create the table
 			echo "<center><font size='20'><b>$exnum_result</b> record/s found.</font><br><br>";
-            echo "<table border='5'>";
+			echo "<table border='5' style='table-layout: fixed; width: 90%'>";
             echo "<tr bgcolor='yellow'>";
-            echo "<td align=\"center\">Client ID";
-            echo "<td align=\"center\">Company";
+            echo "<td class=\"tblclientid\">Client ID";
+            echo "<td style='table-layout: fixed; width: 10%' align=\"center\">Company";
             echo "<td align=\"center\">First Name";
             echo "<td align=\"center\">Last Name";
-            echo "<td align=\"center\">Date";
+            echo "<td style='table-layout: fixed; width: 10%' align=\"center\">Date";
             echo "<td align=\"center\">Location";
-            echo "<td align=\"center\">Notes";
+            echo "<td class=\"tblnotes\">Notes";
 			echo "<td align=\"center\">Interaction by";
             echo "</tr>";
 
             for ($i=0; $i < $exnum_result; $i++)
              {
                $row=mysql_fetch_array($exdatesearchresult);
-               echo "<tr><td >";
+               echo "<tr><td align=\"center\">";
                echo htmlspecialchars($row['clientID']);
                echo "<td>";
                echo htmlspecialchars($row['company']);
@@ -82,22 +84,9 @@ if ($exnum_result == 0) {
              }
              echo "</table></center>";
 		}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 ?>
+<br><center><a href="#"><strong>Export</strong></a></center>
+
 
 
 </body>
