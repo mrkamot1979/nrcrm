@@ -30,16 +30,17 @@ h3 {
 table {
     border: 1px solid black;
     padding: 5px;
- /*   border-collapse: collapse;
-    border-spacing: 0;
-    background-color: #F1F1F0;
-    width: 30%;*/
+ }
+
+.tblclientid {
+	width: 5%;
+	text-align: center;
 }
 
-td {
-  width: auto;
+.tblnotes {
+	width: 30%;
+	text-align: center;
 }
-
 
 
 /***********
