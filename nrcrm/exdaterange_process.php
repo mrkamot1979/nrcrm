@@ -14,7 +14,12 @@
  $fromdate = cleaninput($_POST["frmdate"]);
  $todate = cleaninput($_POST["todate"]);
 
-
+//if block to check if entries are blank.
+if($fromdate == "" OR $todate == "") {
+	echo "<br><center><b>From Date and To Date are required.  Please try again.</b></center>";
+	exit;
+}
+ 
  //use nrstripos to check for malicious code
  nrstripos($_POST);
 
