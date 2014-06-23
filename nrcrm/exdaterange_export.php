@@ -1,13 +1,13 @@
 <?php
 	session_start();
-	require_once dirname(__FILE__) . '/../Classes/PHPExcel.php'; //php excel object
 	$pagetitle = "Extract by Date";
+	require_once dirname(__FILE__) . '/../Classes/PHPExcel.php'; //php excel object
 ?>
 <html>
 <?php
   include('inc/header.php');
-  include('inc/sessionvalidation.php');
   include('inc/dbhelper.php');
+  include('inc/sessionvalidation.php');
 ?>
 	
 <?php	
@@ -44,11 +44,12 @@
 	$exportdatesearchresult = mysql_query($exportdaterange);
 	$exportnum_result= mysql_num_rows($exportdatesearchresult);
 	
-	//this is where the phpexcel object comes in. Create new PHPExcel object
+ 	//this is where the phpexcel object comes in. Create new PHPExcel object
 	$objPHPExcel = new PHPExcel();
+	
 	// Set document properties
-	$objPHPExcel->getProperties()->setCreator($username)
-								 ->setLastModifiedBy($username)
+	$objPHPExcel->getProperties()->setCreator("ebak")
+								 ->setLastModifiedBy("ebak")
 								 ->setTitle("PHPExcel Test Document")
 								 ->setSubject("PHPExcel Test Document")
 								 ->setDescription("Test document for PHPExcel, generated using PHP classes.")
@@ -60,29 +61,14 @@
 					->setCellValue('A1', 'Client ID')
 					->setCellValue('B1', 'Company')
 					->setCellValue('C1', 'First Name')
-					->setCellValue('D1', 'Last Name!');
-					->setCellValue('E1', 'Date' );
-					->setCellValue('F1','Location');
-					->setCellValue('G1','Notes');
-					->setCellValue('h1','Interaction by');
-
-
-		/*$objPHPExcel->getActiveSheet()->getRowDimension(8)->setRowHeight(-1);*/
-		//this setting is used to make the Notes column G1 "wrapped".
-		$objPHPExcel->getActiveSheet()->getStyle('G1')->getAlignment()->setWrapText(true);1
-
-		//use a for loop to loop through the data and populate the spreadsheet.
-		$objPHPExcel->setActiveSheetIndex(0); 
-		for ($i=2; $i < $exportnum_result; i++) {
-			->setCellValue('A$i', htmlspecialcars($row['name'))
-			$worksheet->write($i, 0, htmlspecialchars($row['name']));
-		
-		}
-		
-		
+					->setCellValue('D1', 'Last Name!')
+					->setCellValue('E1', 'Date' )
+					->setCellValue('F1', 'Location')
+					->setCellValue('G1', 'Notes')
+					->setCellValue('h1', 'Interaction by');
 
 		// Rename worksheet
-		$objPHPExcel->getActiveSheet()->setTitle('Simple');
+		$objPHPExcel->getActiveSheet()->setTitle($fromdate. "to". $todate);
 
 
 		// Set active sheet index to the first sheet, so Excel opens this as the first sheet
@@ -99,10 +85,8 @@
 
 
 	
+
 	
-
-
-
 ?>
 </body>
 </html>
