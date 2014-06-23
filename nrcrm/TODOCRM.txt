@@ -1,6 +1,6 @@
 0) [DONE] create a real login database instead of an array in checklogin.php
 1)[DONE] create an inc file to house the session validation function as it will be accessed by welcome.php, welcome_process.php
-2) Create a database that accepts and displays japanese characters
+2) [DONE] Create a database that accepts and displays japanese characters
 	2.1) To change the whole database.  Syntax found on the web "ALTER DATABASE databasename CHARACTER SET utf8 COLLATE utf8_unicode_ci;" and "ALTER TABLE tablename CONVERT TO CHARACTER SET utf8 COLLATE utf8_unicode_ci;"
 	2.2) To change a single table in the database. Syntax found on the web "ALTER TABLE tbl_name CONVERT TO CHARACTER SET charset_name;" and real life example is "ALTER TABLE etape_prospection CONVERT TO CHARACTER SET utf8;"
 	2.3) Use "SET NAMES UTF8".  From the web Try using SET NAMES utf8 after connecting to MySQL:
@@ -29,11 +29,12 @@
 		5.2.1) [DONE] Search type and Search Term
 		5.2.3) [DONE] Create newinteraction_process.php
 	5.3) Create Extract Client Visits functionality
-		5.3.1) Criteria based on date range.
+		5.3.1) [DONE] Criteria based on date range.
 		5.3.2) Criteria based on clientID and date range.
         5.3.4) Implement PHPExcel to make the searches exportable.
 			5.3.4.1) [DONE] Install PHPExcel 
-			5.3.4.2) 
+			5.3.4.2) [DONE] Create extraction based on date range workflow
+			5.3.4.3) [DONE] Created download link for the extracted worksheet.
 6) [DONE] Confirm function of addslahes/htmlspecialchars/stripslashes - no need.
 7) [DONE] Destroy session functionality.
 8) create javascript validations for 
