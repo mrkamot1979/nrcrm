@@ -13,9 +13,6 @@
 
 		As the manual says:
 		SET NAMES indicates what character set the client will use to send SQL statements to the server... It also specifies the character set that the server should use for sending results back to the client.
-	
-	
-
 3) [DONE] create another table that would house the client visits with the following fields
 	ClientID (passed on via $_GET)
 	VisitID (incremental, not null, unique)
@@ -34,7 +31,9 @@
 	5.3) Create Extract Client Visits functionality
 		5.3.1) Criteria based on date range.
 		5.3.2) Criteria based on clientID and date range.
-        5.3.4) Implement PEAR Excel Writer to make the searches exportable.
+        5.3.4) Implement PHPExcel to make the searches exportable.
+			5.3.4.1) [DONE] Install PHPExcel 
+			5.3.4.2) 
 6) [DONE] Confirm function of addslahes/htmlspecialchars/stripslashes - no need.
 7) [DONE] Destroy session functionality.
 8) create javascript validations for 
