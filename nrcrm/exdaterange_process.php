@@ -90,7 +90,8 @@ if ($exnum_result == 0) {
              echo "</table></center>";
 		}
 ?>
-<br><center><a href="#"><strong>Export</strong></a></center>
+<!-- date1 and date 2 are used to pass the $fromdate and $todate -->
+<br><center><a href="exdaterange_export.php?date1=<?php echo $fromdate; //date1 is used to pass fromdate?>&date2=<?php echo $todate; //date1 is used to pass fromdate?>"><strong>Export</strong></a></center>
 
 
 
