@@ -26,6 +26,9 @@
           <li><a href="exdaterange_entry.php" <?php if(isset($pagetitle) AND $pagetitle == "Extract by Date") {
             echo "class=selected";
             } ?>>Extract by Date Range</a></li>
+			<li><a href="exclient_entry.php" <?php if(isset($pagetitle) AND $pagetitle == "Extract by Client") {
+            echo "class=selected";
+            } ?>>Extract by Client</a></li>
         </ul>
 
       </nav>
