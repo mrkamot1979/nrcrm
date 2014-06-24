@@ -62,6 +62,7 @@
 	18.1) If possible, enter the changes in the inc/main.css file as a class.
 19) [DONE] Change "Enter Query" to "New Interaction"
 20) [DONE] Enter validation to prevent blank entries in New Interaction search workflow.
+21) Fix newinteraction_process.php as the email field is flowing out of the table.
 
 
 *aspirational* convert to PDO
