@@ -48,14 +48,11 @@
 	$objPHPExcel = new PHPExcel();
 	
 	// Set document properties
-	$objPHPExcel->getProperties()->setCreator("ebak")
-								 ->setLastModifiedBy("ebak")
-								 ->setTitle("PHPExcel Test Document")
-								 ->setSubject("PHPExcel Test Document")
-								 ->setDescription("Test document for PHPExcel, generated using PHP classes.")
-								 ->setKeywords("office PHPExcel php")
-								->setCategory("Test result file");
-
+	$objPHPExcel->getProperties()->setCreator("$username")
+								 ->setLastModifiedBy("$username")
+								 ->setTitle("Extract from $fromdate to $todate")
+								 ->setSubject("Extract");
+								 
 		// Add some data for the column headers
 		$objPHPExcel->setActiveSheetIndex(0)
 					->setCellValue('A1', 'Client ID')
@@ -66,22 +63,34 @@
 					->setCellValue('F1', 'Location')
 					->setCellValue('G1', 'Notes')
 					->setCellValue('h1', 'Interaction by');
+					
+		//populate the cells by using a FOR loop
+			for ($i = 2; $i <= $exportnum_result+1; $i++) {
+			$row = mysql_fetch_array($exportdatesearchresult);
+			$objPHPExcel->setActiveSheetIndex(0)
+					->setCellValue("A$i", $row['clientID'])
+					->setCellValue("B$i", $row['company'])
+					->setCellValue("C$i", $row['fname'])
+					->setCellValue("D$i", $row['lname'])
+					->setCellValue("E$i", $row['date'])
+					->setCellValue("F$i", $row['location'])
+					->setCellValue("G$i", stripslashes($row['notes']))
+					->setCellValue("H$i", $row['interactionby']);
+					}
+
+		//this code block is used to make the column G wrap text as it houses the notes field.
+		$objPHPExcel->getActiveSheet()->getStyle('G1:D'.$objPHPExcel->getActiveSheet()->getHighestRow())
+		->getAlignment()->setWrapText(true); 
+					
 
 		// Rename worksheet
-		$objPHPExcel->getActiveSheet()->setTitle($fromdate. "to". $todate);
-
-
+		$objPHPExcel->getActiveSheet()->setTitle('Extract' . $fromdate);
 		// Set active sheet index to the first sheet, so Excel opens this as the first sheet
 		$objPHPExcel->setActiveSheetIndex(0);
-
-
-		// Save Excel 2007 file
-		$callStartTime = microtime(true);
-
-		$objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
-		$objWriter->save(str_replace('.php', '.xlsx', /*__FILE__*/$username));
-		$callEndTime = microtime(true);
-		$callTime = $callEndTime - $callStartTime;
+		$objWriter = new PHPExcel_Writer_Excel2007($objPHPExcel);
+		$a=date("Ymd");
+		$objWriter->save("extract$a.xlsx"); 
+		echo "<br><center>File is available here <a href=\"extract$a.xlsx\">extract$a.xlsx</a></center>";
 
 
 	
