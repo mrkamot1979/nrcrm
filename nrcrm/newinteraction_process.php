@@ -63,7 +63,7 @@
                echo "<tr bgcolor=\"#FFFFFF\" onMouseOver=\"this.bgColor='#B2CCFF'\" onMouseOut=\"this.bgColor='#FFFFFF'\"><td>";
                echo htmlspecialchars($row['ClientID']);
                $id=htmlspecialchars($row['ClientID']);
-               echo "&nbsp;&nbsp;&nbsp;<a href='http://localhost/nrcrm/clientvisitentry.php?id=$id'>New Interaction</a>";
+               echo "&nbsp;&nbsp;&nbsp;<a href='exclient_extract.php?id=$id'>New Interaction</a>";
                echo "<td>";
                echo htmlspecialchars($row['company']);
                echo "<td>";
