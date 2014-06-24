@@ -31,6 +31,7 @@
 	5.3) Create Extract Client Visits functionality
 		5.3.1) [DONE] Criteria based on date range.
 		5.3.2) Criteria based on clientID and date range.
+			5.3.2.1) [DONE] Added the header item "Extract by Client" by tinkering with main.css and responsive.css
         5.3.4) Implement PHPExcel to make the searches exportable.
 			5.3.4.1) [DONE] Install PHPExcel 
 			5.3.4.2) [DONE] Create extraction based on date range workflow
