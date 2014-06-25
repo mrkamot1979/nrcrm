@@ -1,6 +1,6 @@
 <?php
   session_start();
-  $pagetitle = "New Interaction";
+  $pagetitle = "Extract by Client";
 ?>
 <html>
 <?php
