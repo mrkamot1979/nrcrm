@@ -10,6 +10,7 @@
 <div id="wrapper">
 <center>
 	<form action="exclient_process.php" id="extractclientsearchform" method="POST">
+		<h1 class="h1table">Enter Search Type and Search Term</h1>
 		<table>
 		<tr>
 			<th><label for="exsearchtype">Search Type</label></th>
