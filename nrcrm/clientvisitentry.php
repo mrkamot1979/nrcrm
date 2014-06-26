@@ -17,16 +17,16 @@
 <body>
 <!--?php echo session_id() ;?--> 
 <center>
-<h1>Client Visit Entry Form</h1>
+<h1 class="h1table">Interaction Entry Form</h1>
 <form method="POST" action="clientvisitentry_process.php?id=<?php echo $clientID; ?>">					
 		
-		<table border="2">
+		<table border="2" width="43%">
 			<tr>
 			<th>
 			<label for="visitdate">Date</label>
 			</th>
 			<td>
-			<input type="text" name="visitdate" id="visitdate">
+			<input type="text" name="visitdate" id="visitdate" size="60">
 			</td>
 			</tr>
 					
@@ -35,7 +35,7 @@
 			<label for="visittime">Time</label>
 			</th>
 			<td>
-			<input type="text" name="visittime" id="visittime">
+			<input type="text" name="visittime" id="visittime" size="60">
 			</td>
 			</tr>
 					
@@ -44,7 +44,7 @@
 			<label for="visitlocation">Location</label>
 			</th>
 			<td>
-			<input type="text" name="visitlocation" id="visitlocation">
+			<input type="text" name="visitlocation" id="visitlocation" size="60">
 			</td>
 			</tr>		
 					
@@ -55,7 +55,7 @@
 			<label for="visitnotes">Visit Notes</label>
 			</th>
 			<td>
-			<textarea name="visitnotes" id="visitnotes"></textarea>
+			<textarea name="visitnotes" id="visitnotes" style="width: 460px; height: 150px;"></textarea>
 			</td>
 			</tr>
 		</table>	
