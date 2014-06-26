@@ -41,7 +41,7 @@
     }
     else
     {
-			echo "<center><font size='20'><b>$exclientnum_result</b> record/s found.</font><br><br>";
+			echo "<center class=\"h1table\"><font size='20'><b>$exclientnum_result</b> record/s found.</font><br><br>";
             echo "<table border='5' style='table-layout: fixed; width: 80%'>";
             echo "<tr bgcolor='3366CC'>";
             echo "<td class=\"tblclientid\">Client ID";
@@ -56,7 +56,7 @@
             for ($i=0; $i < $exclientnum_result; $i++)
              {
                $row=mysql_fetch_array($exclientsearchresult);
-               echo "<tr bgcolor=\"#FFFFFF\" onMouseOver=\"this.bgColor='#B2CCFF'\" onMouseOut=\"this.bgColor='#FFFFFF'\"><td>";
+               echo "<tr bgcolor=\"#FFFFFF\" onMouseOver=\"this.bgColor='#B2CCFF'\" onMouseOut=\"this.bgColor='#FFFFFF'\"><td align=\"center\">";
 			   
 			   $id=htmlspecialchars($row['ClientID']);
                echo "<a href=\"exclient_show.php?id=$id\">";
