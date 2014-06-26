@@ -64,6 +64,21 @@
 20) [DONE] Enter validation to prevent blank entries in New Interaction search workflow.
 21) Fix newinteraction_process.php as the email field is flowing out of the table.
 
+////////
+CSS
+///////////
+
+1) [DONE] created .h1table 
+	1.1) [DONE] implemented .h1table to newclientry.php
+	1.2) [DONE] implemented .h1table to newinteraction_search.php
+	1.3) [DONE] implemented .h1table to exdaterange_entry.php
+2) [DONE] commented  60px bottom margin from header in responsibe.css line 81
+
+
+
+
+
+
 
 *aspirational* convert to PDO
 
