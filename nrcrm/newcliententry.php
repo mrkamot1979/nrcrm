@@ -15,7 +15,7 @@ include('inc/sessionvalidation.php');
 <br>
 <center>
 
-<h1>Test Entry Form</h1>
+<h1 class="h1table">New Client Entry Form</h1>
 <form method="POST" action="newcliententry_process.php">					
 		
 		<table border="2" id="wrapper">
