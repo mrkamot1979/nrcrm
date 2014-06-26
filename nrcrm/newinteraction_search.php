@@ -10,6 +10,7 @@
 <div id="wrapper">
 <center>
 	<form action="newinteraction_process.php" id="searchform" method="POST">
+		<h1 class="h1table">Enter Search Type and Search Term</h1>
 		<table>
 		<tr>
 			<th><label for="searchtype">Search Type</label></th>
