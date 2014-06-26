@@ -9,8 +9,8 @@
 ?>
 <br>
 <center>
-<h1>Enter Date Range</h1>
-<h2>Date format is YYYY/MM/DD</h2>
+<h1 class="h1table">Enter Date Range</h1>
+<h2 class="h1table">Date format is YYYY-MM-DD</h2>
 
   <form name="exdaterange" method="POST" action="exdaterange_process.php">
     <table>
