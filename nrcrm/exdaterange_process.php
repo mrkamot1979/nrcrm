@@ -53,7 +53,7 @@ if ($exnum_result == 0) {
 		echo "<br>There were no results found";
 		exit;
 	} else { //create the table
-			echo "<center><font size='20'><b>$exnum_result</b> record/s found.</font><br><br>";
+			echo "<center class=\"h1table\"><font size='20'><b>$exnum_result</b> record/s found.</font><br><br>";
 			echo "<table border='5' style='table-layout: fixed; width: 90%'>";
             echo "<tr bgcolor='yellow'>";
             echo "<td class=\"tblclientid\">Client ID";
