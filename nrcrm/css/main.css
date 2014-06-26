@@ -32,6 +32,13 @@ table {
     padding: 5px;
  }
 
+ .h1table {
+	color: #6ab47b;
+	font-size: 1.5em;
+	
+ 
+ }
+ 
 .tblclientid {
 	width: 5%;
 	text-align: center;
