@@ -39,8 +39,18 @@
             			exit;
             			}
                       }
-                }
+              }
+				
+	function checkIfBlank($postfrompage) {
+		foreach ($postfrompage as $value) {
+			if ($value == "") {
+				echo "<br><center>Please make sure to enter valid data into all of the fields in the form.<br>Please click on the browser's \"Back\" button</center>";
+				exit;
+			}
+		}
+	}			
 
+				
 
 
 ?>
