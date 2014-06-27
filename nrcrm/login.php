@@ -35,11 +35,26 @@
 	
 	<center>
 	<form name="loginform" id="loginform" method="POST" action="checklogin.php">
-      <input type="text" name="username"><br>
-      <input type="password" name="nrpassword">
-      <br>
-      <input type="submit" value="Login" name="loginButton">
-      
+	  <table>
+		<tr>
+			<td>
+			<label for="username">Username</label>
+			</td>
+			<td>
+			<input type="text" name="username" id="username"><br>
+			</td>
+		</tr>	
+		
+		<tr>
+			<td>
+			<label for="pwd">Password</label>
+			</td>
+			<td>
+			<input type="password" name="nrpassword" id="pwd">
+		</tr>
+      <br><br>
+      </table>
+	  <input type="submit" value="Login" name="loginButton">
     </form>
     </center>
     </div>
