@@ -14,13 +14,13 @@
 ?>
 
 <!-- form section starts here-->
-<body>
 <!--?php echo session_id() ;?--> 
+<div id="wrapper">
 <center>
 <h1 class="h1table">Interaction Entry Form</h1>
 <form method="POST" action="clientvisitentry_process.php?id=<?php echo $clientID; ?>">					
 		
-		<table border="2" width="43%">
+		<table border="2" id="wrapper">
 			<tr>
 			<th>
 			<label for="visitdate">Date</label>
@@ -55,16 +55,17 @@
 			<label for="visitnotes">Visit Notes</label>
 			</th>
 			<td>
-			<textarea name="visitnotes" id="visitnotes" style="width: 460px; height: 150px;"></textarea>
+			<textarea name="visitnotes" id="visitnotes" style="width: 250px; height: 160px;"></textarea>
 			</td>
 			</tr>
 		</table>	
-			<br>
-			
+
+	
+<br>
 			<input type="hidden" name="interactionby" value="<?php echo $username; ?>">
 			<input type="submit" value="Submit">				
-			</center>
-</form>
-
+			</form>
+</center>
+</div>
 </body>
 </html>
