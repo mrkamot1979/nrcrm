@@ -8,6 +8,7 @@
 	$username = cleaninput($_POST['username']);
 	$password = cleaninput($_POST['nrpassword']);
 	
+	
 	//mechanism to stop malicious code.
 	nrstripos($_POST);
 		
