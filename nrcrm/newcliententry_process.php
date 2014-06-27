@@ -13,6 +13,10 @@ include('inc/dbhelper.php');
 
 <?php
 //portion where the variables are validated and entered onto mysql using $_POST
+	
+	
+	checkIfBlank($_POST);
+		
 	$procfname = cleaninput($_POST['fname']);
 	$proclname = cleaninput($_POST['lname']);
 	$procaddress = cleaninput($_POST['address']);
