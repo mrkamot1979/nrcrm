@@ -3,9 +3,9 @@ NR Client Management System
 
 Overview
 -----------
-A couple of years ago I created a Query Logging software using PHP/Apache/MySQL for the helpdesk that I used to work for so I thought of doing something similar again but with a few other "improvements".  The main purpose of this project was to re acquaint myself with programming and to learn using Git and GitHub.
+The idea behind this software was a from a colleague who was thinking of a system that could  track client interactions and also be a database of client contacts we had within the region. I thought it was doable using the languages I am familiar with (PHP/Apache/MySQL) so I decided to try creating one.
 
-The idea behind this software was a peculiar request from a colleague who wanted to build a client management system that would trackk who/what/where/when client visits/interactions were made and i thought it was doable using PHP.
+A couple of years ago I created a Query Logging software using PHP/Apache/MySQL for the helpdesk that I used to work for so I thought of using that as a pattern for this new software.  The notable difference between that software and this current one is the login feature where PHP's [Session Handling](http://www.php.net/manual/en/book.session.php) is used to manage the login/logout and identification of the user (among other things).  Also, with this current software, I used CSS files that I learned from at [TreeHouse](teamtreehouse.com)  
  
 Technologies used:
    * PHP
@@ -13,4 +13,14 @@ Technologies used:
    * Apache
 
 I used the [XAMPP](https://www.apachefriends.org/index.html) bundle to make things easy to install.
-  
+
+Installation
+-----------
+
+ 
+Workflows
+-----------
+	* Creating a new client
+	* Searching for a client and then entering interaction details
+	* Searching for interactions within a specified date range and exporting to Excel
+	* Searching for interactions with a specific client and exporting to Excel
