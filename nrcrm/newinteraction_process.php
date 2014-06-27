@@ -60,10 +60,14 @@
             for ($i=0; $i < $num_result; $i++)
              {
                $row=mysql_fetch_array($searchresult);
+			   
                echo "<tr bgcolor=\"#FFFFFF\" onMouseOver=\"this.bgColor='#B2CCFF'\" onMouseOut=\"this.bgColor='#FFFFFF'\"><td>";
-               echo htmlspecialchars($row['ClientID']);
                $id=htmlspecialchars($row['ClientID']);
-               echo "&nbsp;&nbsp;&nbsp;<a href='clientvisitentry.php?id=$id'>New Interaction</a>";
+			   echo "<a href=\"clientvisitentry.php?id=$id\">";
+			   echo htmlspecialchars($row['ClientID']);
+			   echo "</a>";
+               //$id=htmlspecialchars($row['ClientID']);
+               //echo "&nbsp;&nbsp;&nbsp;<a href='clientvisitentry.php?id=$id'>New Interaction</a>";
                echo "<td>";
                echo htmlspecialchars($row['company']);
                echo "<td>";
