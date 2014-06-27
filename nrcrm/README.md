@@ -14,11 +14,19 @@ Technologies used:
 
 Installation
 -----------
-I used the [XAMPP](https://www.apachefriends.org/index.html) bundle to make things easy to install.  
+   * XAMPP - I used the [XAMPP](https://www.apachefriends.org/index.html) bundle to make things easy to install.  
+   * MySQL database - Table structure can be found in the repo and they are the only 3 JPG files in there.  Will probably create a script in the future to create these tables on the fly.
+
+
  
 Workflows
-
+-------------
    * Creating a new client
    * Searching for a client and then entering interaction details
    * Searching for interactions within a specified date range and exporting to Excel
    * Searching for interactions with a specific client and exporting to Excel
+
+   
+Caveats
+-------------
+The security aspect of this system is not very good but I did add some input validations as there are a lot of forms in this software.  Before using this software, please make sure to implement safeguards at the MySQL level (i.e. Admin user/password for database, super users, etc...).
