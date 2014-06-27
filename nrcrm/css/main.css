@@ -253,7 +253,7 @@ nav a.selected, nav a:hover {
 
 /*FROM Shirts 4 Mike*/
 
-form {width: 375px; margin: 34px auto;}
+form {width: 375px; margin: /*34px*/ auto auto;}
 form tr {
     border: 1px solid #CCC;
     background: #f4f3f2;
