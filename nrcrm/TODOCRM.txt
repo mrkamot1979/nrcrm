@@ -30,7 +30,7 @@
 		5.2.3) [DONE] Create newinteraction_process.php
 	5.3) Create Extract Client Visits functionality
 		5.3.1) [DONE] Criteria based on date range.
-		5.3.2) Criteria based on clientID and date range.
+		5.3.2) [DONE] Criteria based on clientID (i.e. to get all of the interactions with the specific client.)
 			5.3.2.1) [DONE] Added the header item "Extract by Client" by tinkering with main.css and responsive.css
         5.3.4) Implement PHPExcel to make the searches exportable.
 			5.3.4.1) [DONE] Install PHPExcel 
@@ -63,6 +63,7 @@
 19) [DONE] Change "Enter Query" to "New Interaction"
 20) [DONE] Enter validation to prevent blank entries in New Interaction search workflow.
 21) Fix newinteraction_process.php as the email field is flowing out of the table.
+22) [DONE] created checkIfBlank($postfrompage) to validate blank fields.
 
 ////////
 CSS
