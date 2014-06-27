@@ -50,11 +50,9 @@ include('inc/sessionvalidation.php');
 			<th>
 			<label>Gender</label>
 			</th>
-			<td>
-			<input type="radio" name="gender" id="male" value="Male" />
-			<label for="male">Male</label>
-			<input type="radio" name="gender" id="female" value="Female" />
-			<label for="female">Female</label>
+			<td align="center">
+			<label for="male" style="vertical-align: middle">Male</label><input type="radio" name="gender" style="vertical-align: middle" id="male" value="Male" />
+			<label for="female" style="vertical-align: middle">Female</label><input type="radio" style="vertical-align: middle" name="gender" id="female" value="Female" />
 			</td>
 			</tr>
 			
@@ -79,8 +77,9 @@ include('inc/sessionvalidation.php');
 			<br>
 			<input type="hidden" name="enteredby" value="<?php echo $username; ?>">
 			<input type="submit" value="Submit">				
-			</center>
+			
 </form>
+</center>
 </div>
 </body>
 </html>
