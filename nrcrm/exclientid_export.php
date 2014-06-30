@@ -48,13 +48,13 @@
 	$objPHPExcel = new PHPExcel();
 	
 	//$row_clientname is used to get the client's name for file naming purposes
-	$row_clientname = mysql_fetch_array();
+	$row_clientname = mysql_fetch_array($exportclientidsearchresult);
 	
-	$row1 = 
+	 
 	// Set document properties
 	$objPHPExcel->getProperties()->setCreator("$username")
 								 ->setLastModifiedBy("$username")
-								 ->setTitle("Extract for $exportclientid")
+								 ->setTitle("Extract for $row_clientname['lname'].$row_clientname['fname']")
 								 ->setSubject("Extract");
 								 
 		// Add some data for the column headers
@@ -93,8 +93,8 @@
 		$objPHPExcel->setActiveSheetIndex(0);
 		$objWriter = new PHPExcel_Writer_Excel2007($objPHPExcel);
 		$a=date("Ymd");
-		$objWriter->save("extract$a.xlsx"); 
-		echo "<br><center>File is available here <a href=\"extractClientID$a.xlsx\">extract$a.xlsx</a></center>";
+		$objWriter->save("extract.$row_clientname['lname'].$row_clientname['fname'].$a.xlsx"); 
+		echo "<br><center>File is available here <a href=\"extract.$row_clientname['lname'].$row_clientname['fname'].$a.xlsx\">extract.$row_clientname['lname'].$row_clientname['fname']$a.xlsx</a></center>";
 
 
 	
