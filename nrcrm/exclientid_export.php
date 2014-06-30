@@ -12,15 +12,15 @@
 	
 <?php	
 	//use a GET to get the date ranges
-	$fromdate = cleaninput($_GET['date1']);
-	$todate = cleaninput($_GET['date2']);
+	$exportclientid = cleaninput($_GET['clientidexport']);
+	
 	
 	//use the nrstripos to guard against malicious code.
 	nrstripos($_GET);
 	
 	
 	 //construct query string
-	$exportdaterange ="SELECT 
+	$exportclientid ="SELECT 
 	tblclientdetails.clientID, 
 	tblclientdetails.company,
 	tblclientdetails.fname, 
@@ -32,7 +32,7 @@
 	FROM
 	tblclientdetails, tblclientvisit 
 	WHERE
-	tblclientvisit.date BETWEEN '".$fromdate."' AND '".$todate."' 
+	tblclientdetails.clientID = '".$exportclientid."'
 	AND
 	tblclientdetails.clientID = tblclientvisit.clientID
 	ORDER BY tblclientdetails.clientID
@@ -41,16 +41,20 @@
 	//connect to database
 	 connectToDbase('nrcrm');
 	//execute
-	$exportdatesearchresult = mysql_query($exportdaterange);
-	$exportnum_result= mysql_num_rows($exportdatesearchresult);
+	$exportclientidsearchresult = mysql_query($exportclientid);
+	$exportclientidnum_result= mysql_num_rows($exportclientidsearchresult);
 	
  	//this is where the phpexcel object comes in. Create new PHPExcel object
 	$objPHPExcel = new PHPExcel();
 	
+	//$row_clientname is used to get the client's name for file naming purposes
+	$row_clientname = mysql_fetch_array();
+	
+	$row1 = 
 	// Set document properties
 	$objPHPExcel->getProperties()->setCreator("$username")
 								 ->setLastModifiedBy("$username")
-								 ->setTitle("Extract from $fromdate to $todate")
+								 ->setTitle("Extract for $exportclientid")
 								 ->setSubject("Extract");
 								 
 		// Add some data for the column headers
@@ -65,8 +69,8 @@
 					->setCellValue('h1', 'Interaction by');
 					
 		//populate the cells by using a FOR loop
-			for ($i = 2; $i <= $exportnum_result+1; $i++) {
-			$row = mysql_fetch_array($exportdatesearchresult);
+			for ($i = 2; $i <= $exportclientidnum_result+1; $i++) {
+			$row = mysql_fetch_array($exportclientidsearchresult);
 			$objPHPExcel->setActiveSheetIndex(0)
 					->setCellValue("A$i", $row['clientID'])
 					->setCellValue("B$i", $row['company'])
@@ -90,7 +94,7 @@
 		$objWriter = new PHPExcel_Writer_Excel2007($objPHPExcel);
 		$a=date("Ymd");
 		$objWriter->save("extract$a.xlsx"); 
-		echo "<br><center>File is available here <a href=\"extract$a.xlsx\">extract$a.xlsx</a></center>";
+		echo "<br><center>File is available here <a href=\"extractClientID$a.xlsx\">extract$a.xlsx</a></center>";
 
 
 	
