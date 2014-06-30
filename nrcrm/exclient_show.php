@@ -88,7 +88,7 @@
 
 <br>
 <center>
-<a href="exclientid_export.php?clientidexport=<?php echo $exclientid;?>"><strong>Export</strong></a>
+<a href="exclientid_export.php?idexport=<?php echo $exclientid;?>"><strong>Export</strong></a>
 </center>
 			
 
