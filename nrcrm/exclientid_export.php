@@ -12,7 +12,7 @@
 	
 <?php	
 	//use a GET to get the date ranges
-	$exportclientid = cleaninput($_GET['clientidexport']);
+	$exportclientid = cleaninput($_GET['idexport']);
 	
 	
 	//use the nrstripos to guard against malicious code.
@@ -20,7 +20,7 @@
 	
 	
 	 //construct query string
-	$exportclientid ="SELECT 
+	$exportclientid_query ="SELECT 
 	tblclientdetails.clientID, 
 	tblclientdetails.company,
 	tblclientdetails.fname, 
@@ -41,20 +41,18 @@
 	//connect to database
 	 connectToDbase('nrcrm');
 	//execute
-	$exportclientidsearchresult = mysql_query($exportclientid);
+	$exportclientidsearchresult = mysql_query($exportclientid_query);
 	$exportclientidnum_result= mysql_num_rows($exportclientidsearchresult);
 	
  	//this is where the phpexcel object comes in. Create new PHPExcel object
 	$objPHPExcel = new PHPExcel();
 	
-	//$row_clientname is used to get the client's name for file naming purposes
-	$row_clientname = mysql_fetch_array($exportclientidsearchresult);
-	
 	 
 	// Set document properties
 	$objPHPExcel->getProperties()->setCreator("$username")
 								 ->setLastModifiedBy("$username")
-								 ->setTitle("Extract for $row_clientname['lname'].$row_clientname['fname']")
+								 ->setTitle("Extract for ")
+								 ->setTitle("Extract for $exportclientid")
 								 ->setSubject("Extract");
 								 
 		// Add some data for the column headers
@@ -88,13 +86,18 @@
 					
 
 		// Rename worksheet
-		$objPHPExcel->getActiveSheet()->setTitle('Extract' . $fromdate);
+		$objPHPExcel->getActiveSheet()->setTitle('Extract');
 		// Set active sheet index to the first sheet, so Excel opens this as the first sheet
 		$objPHPExcel->setActiveSheetIndex(0);
 		$objWriter = new PHPExcel_Writer_Excel2007($objPHPExcel);
 		$a=date("Ymd");
-		$objWriter->save("extract.$row_clientname['lname'].$row_clientname['fname'].$a.xlsx"); 
-		echo "<br><center>File is available here <a href=\"extract.$row_clientname['lname'].$row_clientname['fname'].$a.xlsx\">extract.$row_clientname['lname'].$row_clientname['fname']$a.xlsx</a></center>";
+		$objWriter->save("extractByClientID$a"); 
+		echo "
+			<br>
+			<center>
+			File is available <a href=\"extractByClientID$a.xlsx\">here</a> 
+			</a>
+			</center>";
 
 
 	
