@@ -44,8 +44,8 @@
 		exit;
 	} else {
 		//create a table
-		$row=mysql_fetch_array($exclientshowtable);
-		echo "<center class=\"h1table\"><font size='20'><b>$exclientshownum</b> interaction/s with " .$row['fname']. " " .$row['lname'].  " found. </font><br><br>";
+		//$row1=mysql_fetch_array($exclientshowtable);
+		echo "<center class=\"h1table\"><font size='20'><b>$exclientshownum</b> interaction/s found.</font><br><br>";
 		echo "<table border='5' style='table-layout: fixed; width: 90%'>";
         echo "<tr bgcolor='yellow'>";
         echo "<td class=\"tblclientid\">Client ID";
@@ -60,7 +60,7 @@
 
             for ($i=0; $i < $exclientshownum; $i++)
              {
-               //$row=mysql_fetch_array($exclientshowtable);
+               $row=mysql_fetch_array($exclientshowtable);
                echo "<tr><td align=\"center\">";
                echo htmlspecialchars($row['clientID']);
                echo "<td>";
