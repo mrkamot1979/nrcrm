@@ -51,8 +51,7 @@
 	// Set document properties
 	$objPHPExcel->getProperties()->setCreator("$username")
 								 ->setLastModifiedBy("$username")
-								 ->setTitle("Extract for ")
-								 ->setTitle("Extract for $exportclientid")
+								->setTitle("Extract for $exportclientid")
 								 ->setSubject("Extract");
 								 
 		// Add some data for the column headers
@@ -91,7 +90,7 @@
 		$objPHPExcel->setActiveSheetIndex(0);
 		$objWriter = new PHPExcel_Writer_Excel2007($objPHPExcel);
 		$a=date("Ymd");
-		$objWriter->save("extractByClientID$a"); 
+		$objWriter->save("extractByClientID$a.xlsx"); 
 		echo "
 			<br>
 			<center>
