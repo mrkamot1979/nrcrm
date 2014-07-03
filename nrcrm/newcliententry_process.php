@@ -2,9 +2,11 @@
 <?php
 session_start();
 $pagetitle = "New Client Entry";
+
 ?>
 <html>
 <?php
+require_once('inc/phpmailer/class.phpmailer.php');
 include('inc/header.php');
 include('inc/sessionvalidation.php');
 include('inc/dbhelper.php');
@@ -16,7 +18,7 @@ include('inc/dbhelper.php');
 	
 	
 	checkIfBlank($_POST);
-		
+	
 	$procfname = cleaninput($_POST['fname']);
 	$proclname = cleaninput($_POST['lname']);
 	$procaddress = cleaninput($_POST['address']);
@@ -24,6 +26,15 @@ include('inc/dbhelper.php');
 	$procemail = cleaninput($_POST['email']);
 	$proccompname = cleaninput($_POST['compname']);
 	$procusername = cleaninput($_POST['enteredby']);
+	
+	//code block to check if they entered a valid email address using the PHPMailer's validateEmail function
+	$mail = new PHPMailer();
+	if (!$mail->ValidateAddress($procemail)) {
+		echo "<br><center>Please enter a valid email address.  Use the browser's back button to go to the previous page.</center>";
+		exit;
+	}
+
+
 
     //this function is housed in the inc/dbhelper.php file.  this is used to prevent malicious code.
     nrstripos($_POST);
