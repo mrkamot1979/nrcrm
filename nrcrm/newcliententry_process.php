@@ -48,10 +48,10 @@ include('inc/dbhelper.php');
 
 	if ($result)
 		{
-			echo mysql_affected_rows()." client names entered";
+			echo "<center>".mysql_affected_rows()." client names entered";
 		   	$id = mysql_insert_id(); //ClientID
             echo "<br>";
-			echo "Enter interaction <a href=\"clientvisitentry.php?id=$id\">details</a>";
+			echo "Enter interaction <a href=\"clientvisitentry.php?id=$id\">details</a></center>";
 		} else {
 			echo "there was something wrong with the database entry process.";
 		}
