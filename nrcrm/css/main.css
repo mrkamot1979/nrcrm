@@ -38,6 +38,12 @@ table {
 	
  
  }
+
+.h2table {
+  color: #6ab47b;
+  font-size: 1em;
+  }
+
  
 .tblclientid {
 	width: 5%;
