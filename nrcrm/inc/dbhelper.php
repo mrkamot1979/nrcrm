@@ -50,6 +50,41 @@
 		}
 	}			
 
+
+	function get_clients_clientID($id) {
+		$clientid = $id;
+
+		//create query string with $clientid
+		$exclientexport = "
+		SELECT 
+		tblclientdetails.clientID, 
+		tblclientdetails.company,
+		tblclientdetails.fname, 
+		tblclientdetails.lname, 
+		tblclientvisit.date, 
+		tblclientvisit.location, 
+		tblclientvisit.notes, 
+		tblclientvisit.interactionby 
+		FROM
+		tblclientdetails, tblclientvisit 
+		WHERE
+		tblclientdetails.clientID = '".$clientid."'
+		AND
+		tblclientdetails.clientID = tblclientvisit.clientID
+		ORDER BY tblclientdetails.clientID
+		";
+			
+		//connect to database and execute the search
+		connectToDbase('nrcrm');
+		
+		$exclientshowtable = mysql_query($exclientexport);
+		
+		$exclientshownum = mysql_num_rows($exclientshowtable);
+
+		return $exclientshownum;
+		
+
+	}
 				
 
 
