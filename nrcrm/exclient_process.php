@@ -49,7 +49,7 @@
             echo "<td align=\"center\">First Name";
             echo "<td align=\"center\">Last Name";
             echo "<td align=\"center\">Address";
-            echo "<td align=\"center\" >Gender";
+            echo "<td align=\"center\">Gender";
             echo "<td align=\"center\" style=\"word-wrap: break-word\">Email";
             echo "</tr>";
 
