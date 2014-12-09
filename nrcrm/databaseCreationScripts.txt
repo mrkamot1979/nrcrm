@@ -1,11 +1,38 @@
+*tblclientdetails
 CREATE TABLE tblclientdetails(
-   ClientID INT NOT NULL AUTO_INCREMENT,
-   fname TEXT NOT NULL,
-   lname TEXT NOT NULL,
-   address TEXT NOT NULL,
-gender TEXT NOT NULL,
- email TEXT NOT NULL,
- company TEXT NOT NULL,
- enteredby TEXT NOT NULL,
- PRIMARY KEY ( ClientID )
- );
+	ClientID INT NOT NULL AUTO_INCREMENT,
+	fname TEXT NOT NULL,
+	lname TEXT NOT NULL,
+	address TEXT NOT NULL,
+	gender TEXT NOT NULL,
+	email TEXT NOT NULL,
+	company TEXT NOT NULL,
+	enteredby TEXT NOT NULL,
+	PRIMARY KEY ( ClientID )
+);
+
+
+*tblclientvisit
+CREATE TABLE tblclientvisit(
+	ClientID INT NOT NULL,
+	visitid INT NOT NULL,
+	date DATE NOT NULL,
+	time TIME NOT NULL,
+	location TEXT NOT NULL,
+	notes TEXT NOT NULL,
+	interactionby text NOT NULL,	
+	PRIMARY KEY (visitid)
+);
+
+
+
+*tblusers
+CREATE TABLE tblusers(
+	username TINYTEXT NOT NULL,
+	password TINYTEXT NOT NULL,
+	answer text NOT NULL
+);
+
+
+
+
