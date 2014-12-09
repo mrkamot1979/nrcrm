@@ -18,7 +18,6 @@
 <div id="wrapper">
 <center>
 <h1 class="h1table">Interaction Entry Form</h1>
-<h1 class="h2table">Date format is "YYYY/MM/DD"</h1>
 <form method="POST" action="clientvisitentry_process.php?id=<?php echo $clientID; ?>">					
 		
 		<table border="2" id="wrapper">
