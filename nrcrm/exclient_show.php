@@ -12,7 +12,6 @@
 
 	$exclientid = cleaninput($_GET['id']);
 	
-	
 	//create the query string
 	$exclientexport = "
 	SELECT 
@@ -39,10 +38,6 @@
 	$exclientshowtable = mysql_query($exclientexport);
 	
 	$exclientshownum = mysql_num_rows($exclientshowtable);
-	
-
-	//$exclientshownum = get_clients_clientID($exclientid);
-
 	
 	if (!$exclientshownum) {
 		echo "<center><br><b>No Results found</b></center>";
