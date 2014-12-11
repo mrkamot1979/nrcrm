@@ -15,7 +15,7 @@ CREATE TABLE tblclientdetails(
 *tblclientvisit
 CREATE TABLE tblclientvisit(
 	ClientID INT NOT NULL,
-	visitid INT NOT NULL,
+	visitid INT NOT NULL AUTO_INCREMENT,
 	date DATE NOT NULL,
 	time TIME NOT NULL,
 	location TEXT NOT NULL,
@@ -23,16 +23,5 @@ CREATE TABLE tblclientvisit(
 	interactionby text NOT NULL,	
 	PRIMARY KEY (visitid)
 );
-
-
-
-*tblusers
-CREATE TABLE tblusers(
-	username TINYTEXT NOT NULL,
-	password TINYTEXT NOT NULL,
-	answer text NOT NULL
-);
-
-
 
 
