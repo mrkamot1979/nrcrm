@@ -18,6 +18,18 @@
   $(function() {
     $( "#visitdate" ).datepicker({dateFormat: "yy-mm-dd"});
   });
+
+$(function() {
+    $( "#frmdate" ).datepicker({dateFormat: "yy-mm-dd"});
+  });
+
+$(function() {
+    $( "#todate" ).datepicker({dateFormat: "yy-mm-dd"});
+  });
+
+
+
+
   </script>    
 <!-- END OF JQUERY CSS -->
 
