@@ -1,9 +1,27 @@
 <head>
 <meta charset="utf-8">
+
+<!-- BEGINNING OF OWN CSS -->
 <link rel="stylesheet" href="css/normalize.css">
 <link href='http://fonts.googleapis.com/css?family=Changa+One|Open+Sans:400italic,700italic,400,700,800' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="css/main.css" >
 <link rel="stylesheet" href="css/responsive.css" >
+<!-- END OF OWN CSS -->
+
+<!-- BEGINNING OF JQUERY CSS -->
+ <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+  <!--jquery javascripts-->
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="http://code.jquery.com/resources/demos/style.css">
+  <script>
+  $(function() {
+    $( "#visitdate" ).datepicker({dateFormat: "yy-mm-dd"});
+  });
+  </script>    
+<!-- END OF JQUERY CSS -->
+
+
 <title><?php echo $pagetitle; ?></title>
 </head>
 <body>
